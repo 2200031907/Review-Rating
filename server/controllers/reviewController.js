@@ -8,6 +8,7 @@ exports.getProducts = (req, res) => {
     LEFT JOIN reviews r ON p.id = r.product_id
     GROUP BY p.id
   `;
+  
   db.query(query, (err, result) => {
     if (err) return res.status(500).send(err);
     res.json(result);

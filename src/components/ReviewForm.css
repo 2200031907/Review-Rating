@@ -108,8 +108,8 @@
 }
 .nav {
   display: flex;
-  justify-content: center; /* Center-align items */
-  gap: 40px;                /* Add space between items */
+  justify-content: center; 
+  gap: 40px;               
   padding: 12px 20px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #e0e0e0;

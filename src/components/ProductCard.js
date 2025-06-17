@@ -33,7 +33,7 @@ function ProductCard({ product }) {
         <button className="review-btn" onClick={() => setShowReviewModal(true)}>View Reviews</button>
       </div>
 
-      {/* Review Form Modal */}
+  
       {showFormModal && (
         <div className="modal-overlay" onClick={() => setShowFormModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -44,7 +44,7 @@ function ProductCard({ product }) {
         </div>
       )}
 
-      {/* Review Results Modal */}
+     
       {showReviewModal && (
         <div className="modal-overlay" onClick={() => setShowReviewModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
