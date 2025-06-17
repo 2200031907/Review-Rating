@@ -1,0 +1,59 @@
+1. Codebase
+The application includes:
+        A React.js frontend for listing products and submitting/viewing reviews.
+
+        A Node.js + Express backend with RESTful APIs to handle product, user, and review operations.
+
+ The code is organized in two main folders:
+         client/ – Frontend code (React)
+         server/ – Backend code (Express)
+
+Version control used: Git
+Code is pushed to GitHub:https://github.com/2200031907/Review-Rating.git
+
+
+2. Database Schema
+relational database: MySQL
+Tables Used:
+products: 
+users: 
+reviews:
+
+SQL Schema Overview:
+sql
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  description TEXT,
+  image VARCHAR(255)
+);
+
+CREATE TABLE reviews (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  product_id INT,
+  rating INT CHECK (rating BETWEEN 1 AND 5),
+  review TEXT,
+  photo_url VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (user_id, product_id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+
+Use the Products page to:
+View list of products
+Submit reviews with rating, text, and optional image
+View existing reviews in a modal popup
+
+You can also use Postman to manually test API endpoints:
+GET /products
+POST /review
+GET /reviews/:productId
+
